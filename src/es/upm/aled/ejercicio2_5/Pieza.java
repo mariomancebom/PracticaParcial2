@@ -22,9 +22,11 @@ public class Pieza {
 		if (piezaPrincipal.isDefectuosa()) {
 			return true;
 		}
-		for (Pieza p : piezaPrincipal.getComponentes()) {
-			if (contieneDefectos(p)) {
-				return true;
+		if (piezaPrincipal.getComponentes() != null) {
+			for (Pieza p : piezaPrincipal.getComponentes()) {
+				if (contieneDefectos(p)) {
+					return true;
+				}
 			}
 		}
 		return false;
